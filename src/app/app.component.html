@@ -2,37 +2,48 @@
   <h2>SPORT ENLACE Test</h2>
   <app-user></app-user>
   <br>
-  <button type="button" class="btn btn-warning" (click)="openModal()">Crear nuevo usuario</button>
+  <button type="button" id="btnC" class="btn btn-info" (click)="openModal()">Crear nuevo usuario</button>
   <div class="row">
     <modal #myModal>
         <modal-header>
-            <h1>Nueno usuario</h1>
+            <h1>Nuevo usuario</h1>
         </modal-header>
         <modal-content>
             <form [formGroup]='form'>
               <div class="">
                 <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" formControlName='name'>
+                <input class="form-control" id="exampleFormControlInput1" formControlName='name'>
               </div>
               <br>
               <div class="">
                 <label for="exampleFormControlInput1" class="form-label">Documento:</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" formControlName='doc'>
+                <input class="form-control" id="exampleFormControlInput1" formControlName='doc'>
               </div>
               <br>
-              <div class="">
+              <div class="sel">
                 <label for="exampleFormControlInput1" class="form-label">Profile</label>
                 <select class="form-select" formControlName='profile'>
                   <option value="admin">administrador</option>
                   <option value="user">usuario</option>
                 </select>
+                <br>
               </div>
             </form>
         </modal-content>
         <modal-footer>
-          <button id="salir" type="reset" class="btn btn-warning" (click)="closeModal()"><b>Cerrar</b></button>
-          <button type="button" class="btn btn-primary" [disabled]="!form.valid" (click)='saveUser(form.value)'><b>Crear</b></button>  
+          <button id="salir" type="reset" class="btn btn-info" (click)="closeModal()"><b>Cerrar</b></button>
+          <button id="crear" class="btn btn-primary" [disabled]="!form.valid" (click)='saveUser(form.value)'>Crear</button>  
         </modal-footer>
+    </modal>
+  </div>
+  <div>
+    <modal #modalConfirm>
+      <modal-content>
+        <p class="msg-s">Se ha creado el usuario satisfactoriamente</p>
+      </modal-content>
+      <modal-footer>
+        <button id="salir" class="btn btn-info" (click)='closeModalConfirm()'>Cerrar</button>
+      </modal-footer>
     </modal>
   </div>
 </div>

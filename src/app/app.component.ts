@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { UserService } from './services/user.service';
 import { ModalManager } from 'ngb-modal';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserComponent } from './user/user.component';
 
 
 @Component({
@@ -12,7 +13,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent {
   title = 'Test';
+
   @ViewChild('myModal') myModal: any;
+  @ViewChild('modalConfirm') modalConfirm: any;
+
+  @ViewChild(UserComponent) userC: UserComponent;
+
   private modalRef: any;
 
   form:FormGroup;
@@ -24,14 +30,14 @@ export class AppComponent {
   // Modal
   openModal(){
     this.modalRef = this.modalService.open(this.myModal, {
-      size: "md",
-      modalClass: 'mymodal',
+      size: "sm",
+      modalClass: 'myModal',
       hideCloseButton: true,
-      centered: false,
+      centered: true,
       backdrop: true,
       animation: true,
       keyboard: false,
-      closeOnOutsideClick: true,
+      closeOnOutsideClick: false,
       backdropClass: "modal-backdrop"
   })
   }
@@ -39,6 +45,24 @@ export class AppComponent {
   closeModal(){
     this.modalService.close(this.modalRef);
     this.form.reset()
+  }
+
+  openModalConfirm(){
+    this.modalRef = this.modalService.open(this.modalConfirm, {
+      size: "sm",
+      modalClass: 'modalConfirm',
+      hideCloseButton: true,
+      centered: true,
+      backdrop: true,
+      animation: true,
+      keyboard: false,
+      closeOnOutsideClick: false,
+      backdropClass: "modal-backdrop"
+    })
+  }
+
+  closeModalConfirm(){
+    this.modalService.close(this.modalRef);
   }
 
   // Form
@@ -55,8 +79,10 @@ export class AppComponent {
     console.log(data);
     
     this.userService.createUser(data).subscribe((data) => {
-      alert('Usuario creado con exito');
+      // alert('Usuario creado con exito');
       this.closeModal();
+      this.openModalConfirm();
+      this.userC.getUsers();
       
     }, error => {
       console.log(error.status);

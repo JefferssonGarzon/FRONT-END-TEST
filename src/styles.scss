@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+// Estilos para modales
+.modal-content{
+    background-color: aqua;
+    border-radius: 15px;
+    border: none;
+    margin-bottom: none;
+}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Koho; background: rgb(230, 227, 227); }
+body { margin: 0; font-family: koho;  background: rgb(230, 227, 227); }
