@@ -44,7 +44,6 @@ export class AppComponent {
 
   closeModal(){
     this.modalService.close(this.modalRef);
-    this.openModalConfirm();
     this.form.reset()
   }
 
