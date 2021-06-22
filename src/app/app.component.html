@@ -15,22 +15,19 @@
         <modal-content>
             <form [formGroup]='form'>
               <div class="in">
-                <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
-                <input class="form-control" id="exampleFormControlInput1" formControlName='name'>
+                <label for="name" class="form-label">Nombre:</label>
+                <input class="form-control" id="name" formControlName='name'>
               </div>
-              <br>
               <div class="in">
-                <label for="exampleFormControlInput1" class="form-label">Documento:</label>
-                <input class="form-control" id="exampleFormControlInput1" formControlName='doc'>
+                <label for="doc" class="form-label">Documento:</label>
+                <input class="form-control" id="doc" formControlName='doc'>
               </div>
-              <br>
               <div class="sel">
                 <label for="exampleFormControlInput1" class="form-label">Profile</label>
                 <select class="form-select" formControlName='profile'>
                   <option value="admin">administrador</option>
                   <option value="user">usuario</option>
                 </select>
-                <br>
               </div>
             </form>
         </modal-content>
