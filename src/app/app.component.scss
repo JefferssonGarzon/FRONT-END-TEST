@@ -1,12 +1,19 @@
 * {
     font-family: Koho;
+    font-size: 15px;
 }
 
 .container {
     margin-top: 8px;
-    height: 100%;
+    height: auto;
     font-family: Koho;
     width: 100%;
+    display: block;
+}
+
+.tabla-usuarios {
+    width: 100%;
+    height: auto;
 }
 
 label {
@@ -29,22 +36,34 @@ h1 {
 }
 
 h2 {
+    text-align: left;
     font-weight: bolder;
     font-family: koho;
     font-size: 30px;
 }
 
+.in {
+    margin-bottom: 10px;
+}
+
 
 #btnC {
+    text-align: center;
+}
+
+#btnC > button {
+    width: auto;
     margin-bottom: 10px;
-    border-radius: 15px;
     font-weight: bold;
     border-radius: 15px;
+
 }
 
 #crear {
     border-radius: 15px;
+    font-size: 17px;
     font-weight: bold;
+    
 }
 
 #salir {
@@ -54,5 +73,5 @@ h2 {
 }
 
 .msg-s {
-    font-weight: bold;
+    color: black;   
 }

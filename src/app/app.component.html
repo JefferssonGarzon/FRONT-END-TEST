@@ -1,8 +1,12 @@
 <div class="container">
   <h2>SPORT ENLACE Test</h2>
-  <app-user></app-user>
-  <br>
-  <button type="button" id="btnC" class="btn btn-info" (click)="openModal()">Crear nuevo usuario</button>
+  <hr>
+  <div class="tabla-usuarios">
+    <app-user></app-user>
+  </div>
+  <div id="btnC">
+    <button type="button"  class="btn btn-info" (click)="openModal()">Crear nuevo usuario</button>
+  </div>
   <div class="row">
     <modal #myModal>
         <modal-header>
@@ -10,12 +14,12 @@
         </modal-header>
         <modal-content>
             <form [formGroup]='form'>
-              <div class="">
+              <div class="in">
                 <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
                 <input class="form-control" id="exampleFormControlInput1" formControlName='name'>
               </div>
               <br>
-              <div class="">
+              <div class="in">
                 <label for="exampleFormControlInput1" class="form-label">Documento:</label>
                 <input class="form-control" id="exampleFormControlInput1" formControlName='doc'>
               </div>

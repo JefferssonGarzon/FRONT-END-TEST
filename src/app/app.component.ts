@@ -44,6 +44,7 @@ export class AppComponent {
 
   closeModal(){
     this.modalService.close(this.modalRef);
+    this.openModalConfirm();
     this.form.reset()
   }
 
@@ -76,8 +77,6 @@ export class AppComponent {
 
   // Resources
   saveUser(data){
-    console.log(data);
-    
     this.userService.createUser(data).subscribe((data) => {
       // alert('Usuario creado con exito');
       this.closeModal();
